@@ -1,15 +1,25 @@
 ---
 layout: "wrapper"
+author: "Richard"
 ---
 
+<!-- {% if page.title == "first post from the tutorial" %}
+ this is the first post
+{% elsif page.title == "Welcome to Jekyll!"%}
+ lalala
+{% else %}
+ this is another post
+{% endif %} -->
 
-<h1>This is NOT a post</h1>
+{% for post in site.posts%}
+    <li><a style="{% if page.url == post.url%}color:red;{%endif%}"href="{{post.url}}">{{post.title}}</a></li>
+{%endfor%}
+
+
+<h2>{{ page.title }}</h2>
 <hr>
-
-
 
 {{ content }}
 
 
 
-<h3>content deployed</h3>
